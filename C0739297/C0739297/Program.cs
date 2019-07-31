@@ -12,6 +12,7 @@ namespace C0739297
         {
             Gematrio run = new Gematrio();
             run.Run();
+            Console.ReadKey();
         }
     }
 
