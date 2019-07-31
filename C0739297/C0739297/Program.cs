@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace c0739297
+namespace C0739297
 {
     class Program
     {
@@ -13,84 +13,111 @@ namespace c0739297
             new Gematria().Run();
         }
     }
-
     class Gematria
     {
-        Dictionary<string, int> LetterValue = new Dictionary<string, int>()
-            {
-                {"A",1 },
-                {"B",1 },
-                {"C",1 },
+        public static Dictionary<string, int> LetterValue = new Dictionary<string, int>()
+{
+{"A",1},
+{"B",2 },
+{"C",3},
+{"D",4},
+{"E",5},
+{"F",6},
+{"G",7},
+{"H",8 },
+{"I",9},
+{"J",1},
+{"K",2 },
+{"L",3},
+{"M",4},
+{"N",5},
+{"O",6},
+{"P",7 },
+{"Q",8},
+{"R",9},
+{"S",1 },
+{"T",2},
+{"U",3 },
+{"V",4},
+{"W",5},
+{"X",6},
+{"Y",7},
+{"Z",8}
 
 
-            };
-        string name;
+};
+        String name;
         public void Run()
         {
-            Console.WriteLine("I will tell your future! -- What is your name?");
-            name = Console.ReadLine();
-            Console.WriteLine("{0} -- that's the best your parents could come up with??", name);
-            Console.WriteLine("Never mind, let's get started....");
 
-            this.RunGematriaCalculation(name);
+            Console.WriteLine(" I will tell you your future! -- What is your Name?");
+            name = Console.ReadLine();
+            Console.WriteLine("{0} --- That's the best your parent can come up with??", name);
+            Console.WriteLine("never mind, let's get started ..");
+
+            Console.WriteLine(this.RunGematriaCalculation(name));
 
         }
 
-        public void RunGematriaCalculation(string thename)
+        public int RunGematriaCalculation(string thename)
         {
+            int GematriaValue = 0;
+            int total = 0;
+
+
             foreach (char letter in thename)
             {
-                Console.WriteLine(letter);
-                this.RunGematriaVlaueofLetter(letter);
+                GematriaValue = this.ReturnGematriaValueofLetter(letter.ToString());
+                total += GematriaValue;
+
             }
-        }
+            return total;
 
-        public void RunGematriaVlaueofLetter(char letter)
+        }
+        public int ReturnGematriaValueofLetter(string letter)
         {
-            int temp = LetterValue["B"];
-            Console.WriteLine(temp);
+            return LetterValue[letter.ToUpper()];
         }
-
     }
-
-    class PlayGround
+    class playground
     {
         public void Run()
         {
             Dictionary<string, int> LetterValue = new Dictionary<string, int>()
-            {
-                {"A",1 },
-                {"B",2 },
-                {"C",3 },
-                {"D",4 },
-                {"E",5 },
-                {"F",6 },
-                {"G",7 },
-                {"H",8 },
-                {"I",9 },
-                {"J",10 },
-                {"K",11 },
-                {"L",12 },
-                {"M",13 },
-                {"N",14 },
-                {"O",15 },
-                {"P",16 },
-                {"Q",17 },
-                {"R",18 },
-                {"S",19 },
-                {"T",20 },
-                {"U",21 },
-                {"V",22 },
-                {"W",23 },
-                {"X",24 },
-                {"Y",25 },
-                {"Z",26 },
 
+{ {"A",1 },
+{"B",2 },
+{"C",3},
+{"D",4},
+{"E",5},
+{"F",6},
+{"G",7},
+{"H",8 },
+{"I",9},
+{"J",1},
+{"K",2 },
+{"L",3},
+{"M",4},
+{"N",5},
+{"O",6},
+{"P",7 },
+{"Q",8},
+{"R",9},
+{"S",1 },
+{"T",2},
+{"U",3 },
+{"V",4},
+{"W",5},
+{"X",6},
+{"Y",7},
+{"Z",8}
 
-            };
+};
             int temp = LetterValue["B"];
             Console.WriteLine(temp);
         }
+
     }
+
 
 }
